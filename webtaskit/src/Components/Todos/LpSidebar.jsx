@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCheckPoint, getTagsList } from "../../Redux/AppContext/actions";
 import { useSearchParams } from "react-router-dom";
 import { LpCreateTask } from "../../Modals/LpCreateTask";
+import { Link } from "react-router-dom";
 
 const LpSidebar = () => {
 
@@ -25,7 +26,6 @@ const LpSidebar = () => {
     // console.log("checkPoints:", checkPoints);
     // console.log("checkeduserid:", checkedUserId);
     
-
 
     const handleTagChange = (value) => {
         let newTags = [...selectTags];
@@ -108,15 +108,6 @@ const LpSidebar = () => {
                         >
                             <Flex>
                                 <Text paddingLeft="5%">All</Text>
-                                {/* <Text>
-                                    {
-                                        tasks.filter((elem) => 
-                                        elem.includes(
-                                        elem.userID === checkedUserId && 
-                                        elem.isValidate === true
-                                        )).length
-                                    }
-                                </Text> */}
                             </Flex>
                         </Box>
                         {tagLists.length > 0 &&
@@ -154,6 +145,19 @@ const LpSidebar = () => {
                                 );
                             })}
                     </Flex>
+
+                    <Box>
+                        <Link to="/lptodogallery">
+                            <Box
+                               cursor="pointer"
+                               margin={{base: "0.5%", sm: "0.5%", md: "2%", lg: "2%", xl: "2%"}}
+                               borderRadius="10px"
+                               padding={{base: "1%", sm: "1%", md: "5%", lg: "5%", xl: "5%"}}
+                               boxShadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
+                               backgroundColor="green.200"
+                            >Todo Gallery</Box>
+                        </Link>
+                    </Box>
                 </Box>
             </Flex>
         </Box>

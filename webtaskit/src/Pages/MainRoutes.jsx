@@ -9,6 +9,7 @@ import { LpSidebar } from "../Components/Todos/LpSidebar";
 import { LpTodoHomePage } from "./LpTodoHomePage";
 import { LpEditPage } from "./LpEditPage";
 import { CombinedPage } from "./CombinedPage";
+import { LpGallery } from "./LpGallery";
 
 const MainRoutes = () => {
   return (
@@ -18,6 +19,8 @@ const MainRoutes = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/profileEdit" element={<ProfileEdit />} />
       <Route path="/combinedpage" element={<CombinedPage />} />
+      <Route path="/lptodogallery" element={<LpGallery />} />
+
 
       <Route
         path="/todohomepage"
