@@ -7,16 +7,16 @@ Here is the task tracking website in this website I worked in a team of 5 member
 ## [Deployed URL]( https://webtaskit.vercel.app/)
 
 # Functionality
-  -  Fully responsive layoutes.
-  -  Authentication of users and admin both.
-  -  Users can Create their tasks to do.
-  -  Users can also create, edit, and delete their subtasks.
-  -  Users can create their tasks, can edit tasks, and can delete the tasks as well.
-  -  Users can track their work by creating calendar events.
-  -  User can filter their tasks on the basis of three different tags: -  personal, official and others.
-  -  Users can create, update and delete calendar events according to their project planning.
-  -  Admin functionality in which admin can make change in data and api or delete users and data from admin site itself.
-  -  Different users can manage their data according to them, individual user can not make change in anothers one, only he/she can make changes in his/her data.
+ - Fully responsive layouts.
+ - Authentication of users and admin both.
+ - Users can create their tasks to do.
+ - Users can also create, edit, and delete their subtasks.
+ - Users can create their tasks, can edit tasks, and can delete the tasks as well.
+ - Users can track their work by creating calendar events.
+ - User can filter their tasks on the basis of three different tags: - personal, official, and others.
+ - Users can create, update and delete calendar events according to their project planning.
+ - Admin functionality in which the admin can make changes in data and API or delete users and data from the admin site itself.
+ - Different users can manage their data according to them, an individual user can not make changes in another one, only he/she can make changes in his/her data.
   
 
 
