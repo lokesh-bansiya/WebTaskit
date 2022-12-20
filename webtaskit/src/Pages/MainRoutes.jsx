@@ -20,16 +20,14 @@ import { UserDashboard } from "./UserDashboard";
 import CalendarHomePage from "../Components/Calendar/CalendarHomePage";
 import AllEvents from "./AllEvents";
 import { CombinedPage } from "./CombinedPage";
-
 import AdminDashboard from "./AdminDashboard";
 import DSingleBook from "../Components/Admin/DSingleBook";
-
 import PaymentPro from "../Components/paymentproNew";
 import ThreeTierPricing from "../Components/PricingNew";
 import PricingModal from "../Components/pricingModalNew";
-
 import Overview from "./OverviewER";
 import { Product } from "./ProductNew";
+import { LpAdminGalleryCard } from "../Components/Todos/LpAdminGalleryCard";
 
 
 const MainRoutes = () => {
@@ -41,18 +39,12 @@ const MainRoutes = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/profileEdit" element={<ProfileEdit />} />
       <Route path="/lptodogallery" element={<LpGallery />} />
-      
-
       <Route path="/users/:id" element={<DSingleBook />} />
       <Route path="/enterprises" element={<Overview />} />
-
       <Route path="/payment" element={<PaymentPro />} />
       <Route path="/pricing" element={<ThreeTierPricing />} />
       <Route path="/pricingmodal" element={<PricingModal />} />
       <Route path="/featuresoverview" element={<Product />} />
-
-
-
       <Route path="/resourse" element={<PR_Resourse />} />
       <Route path="/singleresourse" element={<PR_Single />} />
       <Route path="/singletworesourse" element={<PR_Singletwo />} />
@@ -60,9 +52,8 @@ const MainRoutes = () => {
       <Route path="/singlefourresourse" element={<PR_Singlefour />} />
       <Route path="/singlefiveresourse" element={<PR_Singlefive />} />
       <Route path="/singlesixresourse" element={<PR_Singlesix />} />
-
       <Route path="/combinedpage" element={<CombinedPage />} />
-
+      <Route path="/lpadmingallerycard" element={<LpAdminGalleryCard />} />
       <Route
         path="/todohomepage"
         element={
@@ -100,9 +91,7 @@ const MainRoutes = () => {
         }
       />
       <Route path="/calendarhomepage" element={<CalendarHomePage />} />
-
       <Route path="/userdashboard" element={<UserDashboard />} />
-
       <Route path="/alluserevents" element={<AllEvents />} />
     </Routes>
   );

@@ -1,10 +1,11 @@
-import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const DBookCart = ({ bookData }) => {
   return (
     <Box
+      backgroundColor="white" 
       style={{
         border: "1px solid gray",
         margin: "10px",

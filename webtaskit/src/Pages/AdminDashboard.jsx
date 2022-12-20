@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Container, Flex, Stack, useMediaQuery } from "@chakra-ui/react";
-import DFilterComp from "../Components/Admin/DFilterComp";
+import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
 import DAdminHomePage from "../Components/Admin/DAdminHomePage";
 const AdminDashboard = () => {
   const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
   return (
-    <Box>
+    <Box width="100%" backgroundColor="#e8f7fc">
       <Flex direction={"column"}>
         <h1
           style={{
@@ -22,9 +21,8 @@ const AdminDashboard = () => {
         <Box
           justifyContent={"center"}
           alignItems="center"
-          padding={5}
-          width={"container.xl"}
           margin="auto"
+          width="100%"
         >
           <DAdminHomePage />
         </Box>

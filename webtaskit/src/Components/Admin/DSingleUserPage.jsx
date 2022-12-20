@@ -46,7 +46,7 @@ const DSingleUserPage = ({
     const newSubTaskData = subTasks.map((item) => {
       if (value.includes(item.subTaskTitle)) {
         return { ...item, status: true };
-      } else {
+      }else {
         return { ...item, status: false };
       }
     });

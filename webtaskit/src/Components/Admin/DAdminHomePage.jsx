@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../Redux/AdminContext/action";
-
-import styled from "styled-components";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import DBookCart from "./DBookCart";
 import DFilterComp from "./DFilterComp";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 
 const DAdminHomePage = () => {
   const users = useSelector((store) => store.AdminReducer.users);
   const dispatch = useDispatch();
   const location = useLocation();
   const [serchParams] = useSearchParams();
+
   useEffect(() => {
     if (location || users.length === 0) {
       const getUserParams = {
@@ -20,23 +19,37 @@ const DAdminHomePage = () => {
           userType: serchParams.getAll("userType"),
         },
       };
-
       dispatch(getUsers(getUserParams));
     }
   }, [users.length, dispatch, location.search]);
 
+
   return (
-    <>
-      <BookPageWrapper>
-        <FilterWrapper>
+      <Box
+         display="flex"
+         flexDirection={{base: "column", sm: "column", md: "row", lg: "row", xl: "row"}}
+         width={{base: "80%", sm: "80%", md: "90%", lg: "90%", xl: "90%"}}
+         margin="auto"
+         justifyContent="center"
+      >
+        <Box 
+          backgroundColor="white"
+          width={{base: "100%", sm: "100%", md: "20%", lg: "20%", xl: "20%"}}
+          display="flex"
+          justifyContent="center"
+          paddingTop="3%"
+          boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+          >
           <DFilterComp />
-        </FilterWrapper>
-        <>
+        </Box>
+        <Box width={{base: "100%", sm: "100%", md: "80%", lg: "80%", xl: "80%"}}>
           <Grid
+            width="100%"
             templateColumns={{
+              base: "repeat(1,1fr)",
               lg: "repeat(4,1fr)",
               md: "repeat(3,1fr)",
-              sm: "repeat(2,1fr)",
+              sm: "repeat(1,1fr)",
             }}
           >
             {users.length > 0 &&
@@ -48,20 +61,10 @@ const DAdminHomePage = () => {
                 );
               })}
           </Grid>
-        </>
-      </BookPageWrapper>
-    </>
+        </Box>
+      </Box>
   );
 };
 
-const BookPageWrapper = styled.div`
-  display: flex;
-  border:1px solid gray
-`;
-
-const FilterWrapper = styled.div`
-  width: 20%;
-  border:1px solid gray
-`;
 
 export default DAdminHomePage;

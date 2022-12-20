@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -27,7 +28,7 @@ const DFilterComp = () => {
   }, [userType, setSearchParams]);
 
   return (
-    <div>
+    <Box width="100%">
       <div>
         <h3>Filter Components</h3>
         <div>
@@ -51,7 +52,7 @@ const DFilterComp = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

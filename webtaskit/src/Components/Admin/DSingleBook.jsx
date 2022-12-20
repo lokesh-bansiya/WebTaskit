@@ -32,7 +32,8 @@ import {
   getTasks,
   updateEvent,
 } from "../../Redux/AppContext/actions";
-import { DSingleUserPage } from "./DSingleUserPage";
+import { LpAdminGalleryCard } from "../Todos/LpAdminGalleryCard";
+
 
 const DSingleBook = () => {
   const { id } = useParams();
@@ -56,31 +57,11 @@ const DSingleBook = () => {
   }
 
   const users = useSelector((store) => store.AdminReducer.users);
-  // console.log("🚀 ~ fil", users);
-
   const [showtodo, setShowtodo] = useState(false);
   const [showcalender, setShowcalender] = useState(false);
-
   const [currentuser, setCurrentUser] = useState([]);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-
-  const filterByParamTags = (task) => {
-    const tagsInTheParams = searchParams.getAll("tags");
-    if (tagsInTheParams.includes("All") || tagsInTheParams.length === 0) {
-      return task;
-    }
-    const data = task.tags.filter((elem) => {
-      if (tagsInTheParams.includes(elem)) {
-        return true;
-      }
-      return false;
-    });
-    if (data.length) {
-      return task;
-    }
-    return false;
-  };
 
   const handleTodo = () => {
     if (showtodo) {
@@ -89,6 +70,7 @@ const DSingleBook = () => {
       setShowtodo(true);
     }
   };
+
   const handleCalender = () => {
     if (showcalender) {
       setShowcalender(false);
@@ -106,7 +88,6 @@ const DSingleBook = () => {
     checkPoints.length > 0 &&
       checkPoints.map((elem) => {
         if (elem.checkValidate === true) {
-          // console.log(elem);
           setCheckedUserId(elem.mailID);
         }
       });
@@ -118,11 +99,13 @@ const DSingleBook = () => {
     }
   }, [dispatch, checkPoints.length]);
 
+
   useEffect(() => {
     if (users.length === 0) {
       dispatch(getUsers());
     }
   }, [users.length, dispatch]);
+
 
   useEffect(() => {
     if (id) {
@@ -132,6 +115,7 @@ const DSingleBook = () => {
       users && setCurrentUser(user);
     }
   }, [id]);
+
 
   useEffect(() => {
     if (tasks.length === 0) {
@@ -143,9 +127,18 @@ const DSingleBook = () => {
     console.log("h");
   }, [dispatch, tasks.length, userEvents.length]);
 
+
   return (
     <>
-      <Box width={"full"} marginBottom="130px" marginTop="50px">
+      <Box 
+        width={{base: "90%", sm: "80%", md: "80%", lg:"70%", xl: "70%"}} 
+        borderRadius="20px" 
+        margin="auto" 
+        padding="5%" 
+        marginBottom="1%" 
+        marginTop="3%" 
+        boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+        >
         <Grid
           width={"75%"}
           margin={"auto"}
@@ -163,7 +156,6 @@ const DSingleBook = () => {
               margin={"auto"}
               padding={"20px"}
               width={{ lg: "200px", md: "200px", sm: "200px" }}
-              // width={"100%"}
               borderRadius={"50%"}
               src="https://cdn-icons-png.flaticon.com/512/21/21104.png"
             />
@@ -175,21 +167,18 @@ const DSingleBook = () => {
             flexDirection={"column"}
             justifyContent={"center"}
           >
-            {/* <p style={{fontSize:"15px",marginBottom:"-12px"}}>User Name :</p> */}
             <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
               {currentuser.userName}
             </h1>
-            {/* <p style={{fontSize:"15px",marginBottom:"-9px"}}>User Email :</p> */}
             <h1
               style={{
                 textAlign: "left",
-                fontSize: "25px",
+                fontSize: "20px",
                 marginBottom: "5px",
               }}
             >
               {currentuser.userEmail}
             </h1>
-            {/* <p style={{fontSize:"15px",marginBottom:"-12px"}}>User Type :</p> */}
             <p
               style={{
                 textAlign: "left",
@@ -205,9 +194,9 @@ const DSingleBook = () => {
       </Box>
 
       <Box>
-        <Flex padding="4%" paddingTop="7%" justifyContent="space-evenly">
-          <Button onClick={handleTodo}>Show Todos</Button>
-          <Button onClick={handleCalender}>Show Calender</Button>
+        <Flex padding="4%" justifyContent="space-evenly">
+          <Button _hover={{bg: "blue.200", color: "black"}} bg="blue.500" color="white" fontWeight="bold" onClick={handleTodo}>Show Todos</Button>
+          <Button _hover={{bg: "blue.200", color: "black"}} bg="blue.500" color="white" fontWeight="bold" onClick={handleCalender}>Show Calender</Button>
         </Flex>
       </Box>
 
@@ -223,15 +212,15 @@ const DSingleBook = () => {
           }}
         >
           <Grid
-            w="full"
+            w={{base: "90%", sm: "90%", md: "100%", lg: "90%", xl: "90%"}}
             templateColumns={{
               base: "repeat(1, 1fr)",
-              sm: "repeat(1, 1fr)",
-              md: "repeat(2, 1fr)",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
               lg: "repeat(4, 1fr)",
             }}
-            gap={8}
-            padding="0px  20px"
+            gap="3%"
+            padding="2%"
             paddingTop="5px"
             margin={"auto"}
             justifyContent={"space-evenly"}
@@ -251,7 +240,7 @@ const DSingleBook = () => {
                       padding={"3px"}
                       borderRadius={"10px"}
                     >
-                      <DSingleUserPage
+                      <LpAdminGalleryCard
                         key={item.id}
                         {...item}
                         colorScheme="red"
