@@ -62,7 +62,7 @@ Here is the time tracking website in this website I worked in a team of 5 member
 ![footer_page](https://user-images.githubusercontent.com/105616033/208386869-ea4e5377-d27c-444b-9a0c-0bd7ab868979.png)
 
 
-# Tech Stack 
+# Tech Stack & Tools:-
 - *React*
 - *Redux*
 - *Redux-Thunk*
@@ -71,6 +71,11 @@ Here is the time tracking website in this website I worked in a team of 5 member
 - *Chakra UI*
 - *Styled-Component*
 - *Node Package Manager*
+- *Postman*
+- *Mock API*
+- *vs-code*
+- *Github*
+- *Vercel for deployment*
 
 # Group Project:-
 ###  Team of 5 members:- 
