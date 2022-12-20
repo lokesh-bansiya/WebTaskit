@@ -20,25 +20,24 @@ const LpTaskCard = ({ id, title, description, tags, subTasks, colorScheme }) => 
     const dispatch = useDispatch();
     const toast = useToast();
 
-
     const deleteTaskHandler = (id) => {
         dispatch(deleteTasks(id))
-        .then(() => toast({
-            title: 'Task deleted !',
-            description: "We've deleted your task.",
-            status: 'success',
-            duration: 1500,
-            position: "top",
-            isClosable: true,
-        }))
-        .then(() => dispatch(getTasks()));
+            .then(() => toast({
+                title: 'Task deleted !',
+                description: "We've deleted your task.",
+                status: 'success',
+                duration: 1500,
+                position: "top",
+                isClosable: true,
+            }))
+            .then(() => dispatch(getTasks()));
     };
 
     const [checkBox, setCheckBox] = useState(() => {
         let data = subTasks.filter((item) => {
             return item.status && item.subTaskTitle;
         })
-        .map((item) => item.subTaskTitle);
+            .map((item) => item.subTaskTitle);
         return data;
     });
 
@@ -48,20 +47,20 @@ const LpTaskCard = ({ id, title, description, tags, subTasks, colorScheme }) => 
             if (value.includes(item.subTaskTitle)) {
                 return { ...item, status: true };
             }
-            else{
+            else {
                 return { ...item, status: false };
             }
         });
         dispatch(updateSubtasksList(id, { subTasks: newSubTaskData }))
-        .then(() => {
-            dispatch(getTasks());
-        });
+            .then(() => {
+                dispatch(getTasks());
+            });
     };
 
 
     return (
         <Box
-            width={{base: "80%", sm: "90%", md: "90%", lg:"90%", xl: "90%"}}
+            width={{ base: "80%", sm: "90%", md: "90%", lg: "90%", xl: "90%" }}
             margin="auto"
             marginTop="7%"
             marginBottom="3%"
@@ -75,8 +74,8 @@ const LpTaskCard = ({ id, title, description, tags, subTasks, colorScheme }) => 
                 </Flex>
             </Box>
             <Box>
-                <Stack 
-                    direction={{base: "column",sm: "column", md: "column",lg: "row", xl: "row"}}
+                <Stack
+                    direction={{ base: "column", sm: "column", md: "column", lg: "row", xl: "row" }}
                     width="fit-content"
                 >
                     {tags.length && tags.map((item, index) => {
@@ -86,36 +85,36 @@ const LpTaskCard = ({ id, title, description, tags, subTasks, colorScheme }) => 
             </Box>
             <Box>
                 <Flex>
-                    <Text 
+                    <Text
                         fontWeight="500"
                         marginTop="3%"
                         marginBottom="3%"
                     >{description}</Text>
                 </Flex>
             </Box>
-            <Box display="flex" flexDirection="column" paddingLeft={{base: "15%"}}>
+            <Box display="flex" flexDirection="column" paddingLeft={{ base: "15%" }}>
                 <CheckboxGroup
                     value={checkBox}
                     onChange={(value) => {
                         setCheckBox(value);
                         updateSubTaskStatus(value);
-                    }}   
+                    }}
                 >
                     {subTasks.length > 0 && subTasks.map((item, index) => {
-                        return <Checkbox color="#470122" fontWeight="500"  value={item.subTaskTitle} key={index}>{item.subTaskTitle}</Checkbox>
+                        return <Checkbox color="#470122" fontWeight="500" value={item.subTaskTitle} key={index}>{item.subTaskTitle}</Checkbox>
                     })}
                 </CheckboxGroup>
             </Box>
             <Box>
-                <Flex 
-                    padding="4%" 
-                    paddingTop="7%" 
+                <Flex
+                    padding="4%"
+                    paddingTop="7%"
                     justifyContent="space-between">
                     <Box color="blue">
-                        <Link to={`/task/${id}`}><EditIcon fontSize="130%" cursor="pointer"/></Link>
+                        <Link to={`/task/${id}`}><EditIcon fontSize="130%" cursor="pointer" /></Link>
                     </Box>
                     <Box color="red">
-                        <DeleteIcon fontSize="130%" onClick={() => deleteTaskHandler(id)} cursor="pointer"/>
+                        <DeleteIcon fontSize="130%" onClick={() => deleteTaskHandler(id)} cursor="pointer" />
                     </Box>
                 </Flex>
             </Box>

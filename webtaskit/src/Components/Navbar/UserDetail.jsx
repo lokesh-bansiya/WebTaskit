@@ -13,6 +13,7 @@ import {
   Flex,
   useDisclosure,
   useToast,
+  Stack,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -37,7 +38,27 @@ const UserDetail = () => {
     navigate("/profileEdit", { replace: true });
   };
 
+  const handleAdminDashboard = () => {
+    if (userData.userType === "admin") {
+      navigate("/admindashboard", { replace: true });
+    } else {
+      toast({
+        title: "Require Admin Authorization !!!",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const handleClickDashboard = () => {
+    navigate("/userdashboard", { replace: true });
+  };
+
   const handleSignOut = () => {
+    localStorage.removeItem("isAuth");
+    localStorage.removeItem("loggedUser");
     setTimeout(() => {
       navigate("/signup", { replace: true });
     }, 2000);
@@ -53,7 +74,29 @@ const UserDetail = () => {
   };
 
   return (
-    <>
+    <Stack
+      display={"flex"}
+      flexDirection={"row"}
+      justifyContent={"spacebetween"}
+      alignItems="center"
+      gap={5}
+    >
+      <Button
+        style={{
+          padding: "0.7rem 1rem",
+          borderRadius: "5px",
+          outline: "none",
+          border: "none",
+          backgroundColor: "#3174ad",
+          color: "#fff",
+          cursor: "pointer",
+          marginBottom: "-8px",
+        }}
+        onClick={handleAdminDashboard}
+      >
+        Admin Dashboard
+      </Button>
+
       <Menu>
         <MenuButton p={"0 0.5rem 0 0"}>
           <FaUserCircle cursor="pointer" size="2rem" />
@@ -80,7 +123,7 @@ const UserDetail = () => {
               borderRadius="20px"
               mb={"5px"}
             >
-              {userData.userType === "admin" ? "Blue Member" : "Green Member"}
+              {userData.userType === "admin" ? "Admin" : "Customer"}
             </Badge>
           </Flex>
 
@@ -92,7 +135,9 @@ const UserDetail = () => {
             <MenuItem onClick={handleClickAccount} fontSize="1rem">
               Account
             </MenuItem>
-            <MenuItem fontSize="1rem">List of favorites</MenuItem>
+            <MenuItem onClick={handleClickDashboard} fontSize="1rem">
+              Dashboard
+            </MenuItem>
             <MenuItem fontSize="1rem">Feedback</MenuItem>
           </Box>
 
@@ -133,7 +178,7 @@ const UserDetail = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Stack>
   );
 };
 
