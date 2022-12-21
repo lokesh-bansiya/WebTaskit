@@ -26,6 +26,11 @@ Here is the task tracking website in this website I worked in a team of 5 member
 
 <br/>
 
+
+## Overview Page:
+![overview page](https://user-images.githubusercontent.com/105616033/208832925-38e9cd4a-9e05-4183-8d61-c9ecd1f7d7cb.png)
+
+
 ## Pricing Page:
 ![pricing_page](https://user-images.githubusercontent.com/105616033/208385653-97ec84e8-9b1e-4fdb-bea6-2d3dc4e5d834.png)
 
@@ -55,8 +60,12 @@ Here is the task tracking website in this website I worked in a team of 5 member
 ![calendar_add_event](https://user-images.githubusercontent.com/105616033/208386530-ae36fa88-7ace-49a0-b665-4fd9c3da26b9.png)
 
 
-## Admin Page:
-![adminpage](https://user-images.githubusercontent.com/105616033/208386761-bfde27b4-7e66-44f7-b3f3-67a70ffdaf46.png)
+## Singleuser Page:
+![adminsideuser page](https://user-images.githubusercontent.com/105616033/208833314-3cfee622-e1f7-4957-ab79-045032bde36b.png)
+
+
+## Admin-dashboard Page:
+![admin-dashboard](https://user-images.githubusercontent.com/105616033/208832989-7469e689-57c3-4583-aa5a-461a55ed9b0a.png)
 
 
 ## Footer Page:
