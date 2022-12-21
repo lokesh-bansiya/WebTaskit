@@ -89,11 +89,12 @@ Here is the task tracking website in this website I worked in a team of 5 member
 
 # Group Project:-
 ###  Team of 5 members:- 
-  - Sunit Hooda
-  - Lokesh Patidar
-  - Prince Singh
-  - Avi Andhariya
-  - Shripad Deshpande
+  - [Sunit Hooda](https://github.com/SunilHooda)
+  - [Lokesh Patidar](https://github.com/lokesh-patidar)
+  - [Prince Singh](https://github.com/mrprincesingh)
+  - [Avi Andhariya](https://github.com/AviAndhariya)
+  - [Shripad Deshpande](https://github.com/Shrideshpande1)
+  
 
 # My areas of responsibility:-
  - Footer Page
