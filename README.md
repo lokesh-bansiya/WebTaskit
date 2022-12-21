@@ -103,7 +103,7 @@ Here is the task tracking website in this website I worked in a team of 5 member
  - Functionality to manage individus tasks data by using crud operations
  - Filter functinality in tasks.
  - Show casing of different users at admin side and user side with different action scenario
- - Created mock api to manage the whole data
+ - Created mock api to manage the data for tasks, calendar events and taglist.
  
 </br>
 
