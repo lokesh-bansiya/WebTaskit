@@ -1,6 +1,6 @@
 # Project name assigned:-  silky-cannon-605
-## Welcome to WebTaskit website
-Here is the task tracking website in this website I worked in a team of 5 members And I made a dynamic task management functionality so that users can manage their tasks and can plan accordingly, On our website calendar events are also there with will help full for users to track date-wise, day-wise and month-wise planning as well.
+## Welcome to the WebTaskit website
+Here is the task tracking website in this website I worked in a team of 5 members And I made a dynamic task management functionality so that users can manage their tasks and can plan accordingly, On our website calendar events are also there with will help full for users to track date-wise, day-wise, and month-wise planning as well.
 <br/>
 <br/>
 
@@ -13,11 +13,10 @@ Here is the task tracking website in this website I worked in a team of 5 member
  - Users can also create, edit, and delete their subtasks.
  - Users can create their tasks, can edit tasks, and can delete the tasks as well.
  - Users can track their work by creating calendar events.
- - User can filter their tasks on the basis of three different tags: - personal, official, and others.
+ - Users can filter their tasks based on three different tags: - personal, official, and others.
  - Users can create, update and delete calendar events according to their project planning.
  - Admin functionality in which the admin can make changes in data and API or delete users and data from the admin site itself.
  - Different users can manage their data according to them, an individual user can not make changes in another one, only he/she can make changes in his/her data.
-  
 
 
 ## Home Page:
