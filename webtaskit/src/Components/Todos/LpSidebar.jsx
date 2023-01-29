@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCheckPoint, getTagsList } from "../../Redux/AppContext/actions";
 import { useSearchParams } from "react-router-dom";
 import { LpCreateTask } from "../../Modals/LpCreateTask";
-import { Link } from "react-router-dom";
-
 
 const LpSidebar = () => {
   const dispatch = useDispatch();
@@ -15,12 +13,8 @@ const LpSidebar = () => {
   const [selectTags, setSelectTags] = useState(
     searchParams.getAll("tags") || []
   );
-  const [totalTask, setTotalTask] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const checkPoints = useSelector((store) => store.AppReducer.checkPoint);
-  const [checkedUserId, setCheckedUserId] = useState("");
-  // console.log("checkPoints:", checkPoints);
-  // console.log("checkeduserid:", checkedUserId);
 
   const handleTagChange = (value) => {
     let newTags = [...selectTags];
@@ -35,21 +29,10 @@ const LpSidebar = () => {
 
 
   useEffect(() => {
-    checkPoints.length > 0 &&
-      checkPoints.map((elem) => {
-        if (elem.checkValidate === true) {
-          setCheckedUserId(elem.mailID);
-        }
-      });
-  }, [checkPoints.length]);
-
-
-  useEffect(() => {
     if (checkPoints.length === 0) {
       dispatch(getCheckPoint());
     }
   }, [dispatch, checkPoints.length]);
-
 
   useEffect(() => {
     if (tagLists.length === 0) {
@@ -88,6 +71,7 @@ const LpSidebar = () => {
               </Box>
               <LpCreateTask isOpen={isOpen} onClose={onClose} />
             </Box>
+
             <Box
               cursor="pointer"
               borderRadius="10px"
@@ -109,7 +93,9 @@ const LpSidebar = () => {
               color={selectTags.includes("All") ? "white" : "black"}
             >
               <Flex>
-                <Text paddingLeft="5%">All</Text>
+                <Text paddingLeft="5%">Total tasks  ➛{
+                  tasks.filter((elem) => elem.userID === localStorage.getItem("userEmail")).length
+                }</Text>
               </Flex>
             </Box>
             {tagLists.length > 0 &&
@@ -148,7 +134,7 @@ const LpSidebar = () => {
                         {
                           tasks.filter((elem) =>
                             elem.tags.includes(
-                              elem.userID === checkedUserId && item.tag
+                              elem.userID === localStorage.getItem("userEmail") && item.tag
                             )
                           ).length
                         }
@@ -158,18 +144,6 @@ const LpSidebar = () => {
                 );
               })}
           </Flex>
-          <Box>
-            <Link to="/lptodogallery">
-              <Box
-                cursor="pointer"
-                margin={{ base: "0.5%", sm: "0.5%", md: "2%", lg: "2%", xl: "2%" }}
-                borderRadius="10px"
-                padding={{ base: "1%", sm: "1%", md: "5%", lg: "5%", xl: "5%" }}
-                boxShadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
-                backgroundColor="green.200"
-              >Todo Gallery</Box>
-            </Link>
-          </Box>
         </Box>
       </Flex>
     </Box>

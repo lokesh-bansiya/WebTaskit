@@ -5,22 +5,18 @@ import {
   Flex,
   Heading,
   Button,
-  ButtonGroup,
   GridItem,
   Text,
   Image,
-  CardBody,
-  Card,
-  Stack,
 } from "@chakra-ui/react";
 import { RxDotFilled } from "react-icons/rx";
 import { ImFacebook2 } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
-
-import banner from "../Images/banner6.jpg";
+import banner from "../Images/banner4.png";
 import logo from "../Images/PRlogo.jpeg";
-const PR_Singlefive = () => {
+
+const PR_Singlethree = () => {
   return (
     <Box>
       <Box
@@ -65,7 +61,7 @@ const PR_Singlefive = () => {
         >
           <Box width={["full", "full", "full", "lg"]} ml="10">
             <Heading as="h2" size="xl" color="white">
-              What is a Kanban board and how does it work
+              What is a User Story? Definition & Examples
             </Heading>
           </Box>
           <Box ml="10" mt="200">
@@ -85,7 +81,7 @@ const PR_Singlefive = () => {
                 <RxDotFilled />{" "}
               </Heading>
               <Heading as="h6" size="xs" color="white">
-                6 MIN READ
+                5 MIN READ
               </Heading>
             </Flex>
           </Box>
@@ -100,7 +96,7 @@ const PR_Singlefive = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-          What is a Kanban board and how does it work?
+          What is a user story?
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -125,7 +121,7 @@ const PR_Singlefive = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-          What is a kanban board?
+          Who creates user stories, and why are they important?
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -150,7 +146,7 @@ const PR_Singlefive = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-          Kanban board vs scrum board?
+          Important factors in user stories
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -175,7 +171,7 @@ const PR_Singlefive = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-          Understanding kanban boards
+          Design a customer experience strategy that truly delivers
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -306,4 +302,4 @@ const PR_Singlefive = () => {
   );
 };
 
-export default PR_Singlefive;
+export default PR_Singlethree;

@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import {
   Box,
   Image,
@@ -44,7 +43,6 @@ const DSingleBook = () => {
   const checkPoints = useSelector((store) => store.AppReducer.checkPoint);
   const [checkedUserId, setCheckedUserId] = useState("");
   const [detail, setDetail] = useState("");
-  const [showDetail, setShowDetail] = useState(detail);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   userEvents?.forEach((item) => {
@@ -385,7 +383,6 @@ const DSingleBook = () => {
                                   value={detail}
                                   onChange={(e) => {
                                     setDetail(e.target.value);
-                                    setShowDetail(e.target.value);
                                   }}
                                   autoFocus
                                 />

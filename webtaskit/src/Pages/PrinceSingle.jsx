@@ -5,22 +5,17 @@ import {
   Flex,
   Heading,
   Button,
-  ButtonGroup,
   GridItem,
   Text,
   Image,
-  CardBody,
-  Card,
-  Stack,
 } from "@chakra-ui/react";
 import { RxDotFilled } from "react-icons/rx";
 import { ImFacebook2 } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
-
-import banner from "../Images/banner7.png";
+import banner from "../Images/banner.png";
 import logo from "../Images/PRlogo.jpeg";
-const PR_Singlesix = () => {
+const PR_Single = () => {
   return (
     <Box>
       <Box
@@ -65,7 +60,7 @@ const PR_Singlesix = () => {
         >
           <Box width={["full", "full", "full", "lg"]} ml="10">
             <Heading as="h2" size="xl" color="white">
-            How to make a Gantt chart: quick tutorial
+              How to Define a Customer Experience Strategy
             </Heading>
           </Box>
           <Box ml="10" mt="200">
@@ -100,7 +95,7 @@ const PR_Singlesix = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-        How to make a Gantt chart—The Ultimate Guide
+        What is a customer experience (CX) strategy?
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -125,7 +120,7 @@ const PR_Singlesix = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-        How to create a Gantt chart
+          4 key elements of a great CX strategy
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -150,7 +145,7 @@ const PR_Singlesix = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-        Step 1: Gather your information
+          Best practices for designing a great CX strategy
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -175,7 +170,7 @@ const PR_Singlesix = () => {
       </Box>
       <Box mt={7} ml={[10, 10, 20, 300]} w={[400, 600, 700, 800]}>
         <Heading p={5} as="h2" size="xl">
-        Get the most from your Gantt chart 
+          Design a customer experience strategy that truly delivers
         </Heading>
 
         <Text p={5} fontSize="xl">
@@ -306,4 +301,4 @@ const PR_Singlesix = () => {
   );
 };
 
-export default PR_Singlesix;
+export default PR_Single;

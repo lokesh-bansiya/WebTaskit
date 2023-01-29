@@ -10,14 +10,10 @@ import {
   Flex,
   Stack,
   Divider,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
   AspectRatio,
 } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
+
 const Overview = () => {
   return (
     <Box>
@@ -370,35 +366,69 @@ const Overview = () => {
           <GridItem>
             <Box mt={10}>
               <Text fontSize={25}>
-              Anyone can create a workflow in Airtable. Bring all your data together with a breadth of integrations, extensible APIs, custom scripting, and more.
+                Anyone can create a workflow in Airtable. Bring all your data
+                together with a breadth of integrations, extensible APIs, custom
+                scripting, and more.
               </Text>
             </Box>
             <Box mt="20">
-              <Heading as='h4' size='md'color="#2B6CB0">
-              See all integrations {"->"}
+              <Heading as="h4" size="md" color="#2B6CB0">
+                See all integrations {"->"}
               </Heading>
             </Box>
           </GridItem>
         </Grid>
-        <Grid   p={20}
+        <Grid
+          p={20}
           bg="#EBF8FF"
           templateColumns={[
             "repeat(2, 1fr)",
             "repeat(2, 1fr)",
             "repeat(4, 1fr)",
             "repeat(7, 1fr)",
-          ]}>
-         <Image mt="5"src="https://www.airtable.com/images/integrations/Slack.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/Box.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/Jira.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/GoogleDrive.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/Hootsuite.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/Zendesk.svg"  alt='Dan Abramov' />
-         <Image mt="5" src="https://www.airtable.com/images/integrations/Github.svg"  alt='Dan Abramov' />
+          ]}
+        >
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Slack.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Box.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Jira.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/GoogleDrive.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Hootsuite.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Zendesk.svg"
+            alt="Dan Abramov"
+          />
+          <Image
+            mt="5"
+            src="https://www.airtable.com/images/integrations/Github.svg"
+            alt="Dan Abramov"
+          />
         </Grid>
       </Box>
       <Box>
-      <Grid p={[5,10,5,10]} bg="white"
+        <Grid
+          p={[5, 10, 5, 10]}
+          bg="white"
           templateColumns={[
             "repeat(1, 1fr)",
             "repeat(2, 1fr)",
@@ -406,16 +436,16 @@ const Overview = () => {
             "repeat(2, 1fr)",
           ]}
         >
-          <GridItem  h="auto" width={["full", "full", "full", "base"]}>
-            <Box >
+          <GridItem h="auto" width={["full", "full", "full", "base"]}>
+            <Box>
               <Heading as="h6" size="xl" color="black.500">
-              Join us and change how you work.
+                Join us and change how you work.
               </Heading>
             </Box>
           </GridItem>
 
-          <GridItem align={["right"]} >
-            <Button  colorScheme='blue'>Sign up for free</Button>
+          <GridItem align={["right"]}>
+            <Button colorScheme="blue">Sign up for free</Button>
           </GridItem>
         </Grid>
       </Box>
