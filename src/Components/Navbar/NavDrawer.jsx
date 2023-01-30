@@ -88,7 +88,7 @@ const NavDrawer = () => {
                         <Box m="25px auto" fontSize={18} fontWeight={"500"}>
                             <Link to={"/"}>
                                 <Text onClick={onClose} _hover={{ color: "blue", cursor: "pointer" }}>
-                                   Home
+                                    Home
                                 </Text>
                             </Link>
                         </Box>
@@ -117,8 +117,20 @@ const NavDrawer = () => {
                             </Link>
                         </Box>
 
+                        <Box m="25px auto" fontSize={18} fontWeight={"500"}>
+                            <Link to="/todohomepage">
+                                <Box onClick={onClose}>Task Page</Box>
+                            </Link>
+                        </Box>
+                        
+                        <Box m="25px auto" fontSize={18} fontWeight={"500"}>
+                            <Link to="/calendarhomepage">
+                                <Box onClick={onClose}>Calendar Page</Box>
+                            </Link>
+                        </Box>
+
                         <Box m="25px auto">
-                            {isAuth ? <UserDetail onCloseNavDrawer={onClose}/> : <SignUpModal onCloseNavDrawer={onClose}/>}
+                            {isAuth ? <UserDetail onCloseNavDrawer={onClose} /> : <SignUpModal onCloseNavDrawer={onClose} />}
                         </Box>
 
                     </DrawerBody>
