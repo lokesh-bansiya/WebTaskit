@@ -78,11 +78,12 @@ function Login() {
 
   // .........................................................................
 
+
   // adding checkpoint data:-
   let flag = true;
   const addCheckPointHandler = () => {
     checkPoints.length > 0 &&
-      checkPoints.forEach((elem) => {
+      checkPoints.map((elem) => {
         if (elem.mailID === checkingMail) {
           dispatch(
             updateCheckPoints(elem.id, { ...elem, checkValidate: true })
@@ -152,7 +153,6 @@ function Login() {
         /* if userType is admin checking the employeeId */
         if (checkPassword[0].userType === "admin") {
           check = userObj.filter((el) => {
-            console.log(el.employeeId);
             return el.userEmail === email && el.employeeID === employeeID;
           });
           /* if employee is is correct */
@@ -165,6 +165,7 @@ function Login() {
               })
             );
             localStorage.setItem("userEmail", email);
+
           } else if (check.length === 0) {
             /*if employee id is not correct */
             toast({
@@ -185,6 +186,7 @@ function Login() {
             })
           );
           localStorage.setItem("userEmail", email);
+
         }
       } else if (checkPassword.length === 0) {
         /* if password is wrong */
@@ -222,26 +224,25 @@ function Login() {
 
   useEffect(() => {
     checkPoints.length > 0 &&
-      checkPoints.forEach((elem) => {
+      checkPoints.map((elem) => {
         if (elem.mailID === checkingMail) {
           dispatch(
             updateCheckPoints(elem.id, { ...elem, checkValidate: true })
           );
-        } 
-        else {
+        } else {
           dispatch(
             updateCheckPoints(elem.id, { ...elem, checkValidate: false })
           );
         }
       });
-  }, [checkPoints.length, checkPoints, dispatch,checkingMail]);
+  }, [checkPoints.length, checkPoints, dispatch]);
 
   // ...................................................................................
 
   return (
     <>
       <Container>
-        <VStack borderRadius="50%" w="lg" h="full" p={10} bg="white">
+        <VStack borderRadius="50%" margin="auto" w="90%" h="full" p="auto" bg="white">
           <Image
             objectFit="cover"
             borderRadius="20%"
@@ -250,7 +251,7 @@ function Login() {
             alt="logo"
           />
         </VStack>
-        <VStack w="lg" h="full" p={10}>
+        <VStack margin="auto" w="90%" h="full" p="auto">
           <Grid templateColumns="repeat(2, 1fr)" gap={40}>
             <GridItem>
               <Flex gap={4}>
@@ -276,7 +277,7 @@ function Login() {
             </GridItem>
           </Grid>
         </VStack>
-        <VStack w="lg" h="full" p={10}>
+        <VStack margin="auto" w="90%" h="full" p="auto">
           <Box width="full">
             <FormControl>
               <FormLabel>Email address</FormLabel>
@@ -358,6 +359,7 @@ function Login() {
             </Box>
             <br />
             <Button
+              // onClick={login}
               align="flex-center"
               gap={5}
               border="1px"
