@@ -56,8 +56,8 @@ const CalendarHomePage = () => {
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
+  const [startTime, setStartTime] = useState("00:00:00");
+  const [endTime, setEndTime] = useState("00:00:00");
   const [selectedEvent, setSelectedEvent] = useState({});
   const [openModal, setOpenModal] = useState(false);
   const [showDeleteBtn, setShowDeleteBtn] = useState(false);
@@ -99,6 +99,7 @@ const CalendarHomePage = () => {
     setStartTime("");
     setEndTime("");
     setShowDeleteBtn(false);
+    setAmPm("");
   };
 
   const handleAddEvent = (newEvent) => {
@@ -107,8 +108,25 @@ const CalendarHomePage = () => {
   };
 
   const handleUpdateEvent = (id, updateEventobj) => {
-    // console.log(id, updateEventobj);
-    dispatch(updateEvent(id, updateEventobj)).then(() => dispatch(getEvents()));
+    console.log(id, updateEventobj);
+    if(updateEventobj.title !== "" && 
+    updateEventobj.start !== "" && 
+    updateEventobj.end !== "" &&
+    updateEventobj.start_time !== "" &&
+    updateEventobj.end_time !== "" 
+    ){
+      dispatch(updateEvent(id, updateEventobj)).then(() => dispatch(getEvents()));
+    }
+    else{
+      toast({
+        description: "All fields are required !",
+        status: "error",
+        duration: 2000,
+        position: "top",
+        isClosable: true,
+      });
+    }
+    clearAllFormFields();
   };
 
   const handleDeletingEvent = (id) => {
@@ -171,13 +189,14 @@ const CalendarHomePage = () => {
     if (selectedEvent.id) {
       console.log(123);
       const id = selectedEvent.id;
-
+      var time1 = selectedEvent.start_time;
+      var time2 = selectedEvent.end_time;
       const updateEvent = {
         title: title,
         start: new Date(startDate),
         end: new Date(endDate),
-        start_time: (`${startTime}${amPm}`),
-        end_time: (`${endTime}${amPm}`),
+        start_time: (`${startTime}${amPm}`) || time1,
+        end_time: (`${endTime}${amPm}`) || time2,
         description: "",
         userID: localStorage.getItem("userEmail"),
       };
