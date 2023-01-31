@@ -36,7 +36,7 @@ const AdminSideSingleUsersTasks = () => {
             xl: "120%",
           }}
         >
-          User dont have any tasks yet!
+          Loading...!
         </Box>
       ) : (
         <Box
@@ -44,7 +44,7 @@ const AdminSideSingleUsersTasks = () => {
           margin="auto"
           paddingTop="5%"
           display="grid"
-          gridTemplateColumns={{ base: "repeat(4,1fr)" }}
+          gridTemplateColumns={{ base: "repeat(1,1fr)",sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(4,1fr)",xl:"repeat(4,1fr)" }}
         >
           {tasks
             .filter((elem) => elem.userID === userEmail)

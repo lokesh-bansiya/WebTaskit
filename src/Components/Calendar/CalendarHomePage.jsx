@@ -307,7 +307,7 @@ const CalendarHomePage = () => {
               setOpenModal(false);
             }}
           />
-          <ModalBody>
+          <ModalBody padding="5%">
             {/* title  */}
 
             <FormControl>
@@ -346,7 +346,7 @@ const CalendarHomePage = () => {
             </FormControl>
           </ModalBody>
 
-          <FormControl>
+          <FormControl width="90%" margin="auto">
             <FormLabel>Start Time</FormLabel>
             <Input
               name="start-time"
@@ -356,7 +356,7 @@ const CalendarHomePage = () => {
             />
           </FormControl>
 
-          <FormControl>
+          <FormControl width="90%" margin="auto">
             <FormLabel>End Time</FormLabel>
             <Input
               name="end-time"
@@ -366,7 +366,7 @@ const CalendarHomePage = () => {
             />
           </FormControl>
 
-          <FormControl>
+          <FormControl width="90%" margin="auto">
             <FormLabel>PM/AM</FormLabel>
             <Select
               value={amPm}

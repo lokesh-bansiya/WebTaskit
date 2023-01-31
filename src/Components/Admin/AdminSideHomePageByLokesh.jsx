@@ -29,7 +29,7 @@ const AdminSideHomePageByLokesh = () => {
                             display="grid"
                             width="85%"
                             margin='auto'
-                            gridTemplateColumns={{ base: "repeat(5,1fr)" }}
+                            gridTemplateColumns={{ base: "repeat(1,1fr)",sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5,1fr)",xl:"repeat(5,1fr)" }}
                         >
                             {
                                 users.map((item) => {
