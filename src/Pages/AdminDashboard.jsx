@@ -1,10 +1,9 @@
 import React from "react";
-import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
-import DAdminHomePage from "../Components/Admin/DAdminHomePage";
+import { Box, Flex, Stack } from "@chakra-ui/react";
+import { AdminSideHomePageByLokesh } from "../Components/Admin/AdminSideHomePageByLokesh";
 const AdminDashboard = () => {
-  const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
   return (
-    <Box width="100%" backgroundColor="#e8f7fc">
+    <Box>
       <Flex direction={"column"}>
         <h1
           style={{
@@ -21,10 +20,12 @@ const AdminDashboard = () => {
         <Box
           justifyContent={"center"}
           alignItems="center"
+          padding={5}
+          width={"100%"}
           margin="auto"
-          width="100%"
         >
-          <DAdminHomePage />
+          {/* <DAdminHomePage /> */}
+          <AdminSideHomePageByLokesh/>
         </Box>
       </Flex>
     </Box>

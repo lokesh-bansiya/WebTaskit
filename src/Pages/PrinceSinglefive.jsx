@@ -16,7 +16,7 @@ import { SiLinkedin } from "react-icons/si";
 
 import banner from "../Images/banner6.jpg";
 import logo from "../Images/PRlogo.jpeg";
-const PR_Singlefive = () => {
+const PrinceSinglefive = () => {
   return (
     <Box>
       <Box
@@ -302,4 +302,4 @@ const PR_Singlefive = () => {
   );
 };
 
-export default PR_Singlefive;
+export default PrinceSinglefive;

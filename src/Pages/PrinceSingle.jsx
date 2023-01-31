@@ -15,7 +15,7 @@ import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
 import banner from "../Images/banner.png";
 import logo from "../Images/PRlogo.jpeg";
-const PR_Single = () => {
+const PrinceSingle = () => {
   return (
     <Box>
       <Box
@@ -301,4 +301,4 @@ const PR_Single = () => {
   );
 };
 
-export default PR_Single;
+export default PrinceSingle;
